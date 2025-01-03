@@ -9,6 +9,7 @@ import {
   Modal,
   Animated,
   Easing,
+  Alert,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -46,18 +47,34 @@ const RandomSelectionScreen = () => {
   };
 
   const removePlayer = (index) => {
-    const newPlayers = [...players];
-    newPlayers.splice(index, 1);
-    setPlayers(newPlayers);
+    Alert.alert(
+      "Delete Player",
+      "Are you sure you want to delete this player?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Delete",
+          onPress: () => {
+            const newPlayers = [...players];
+            newPlayers.splice(index, 1);
+            setPlayers(newPlayers);
 
-    if (isShuffled) {
-      const newShuffled = [...shuffledPlayers];
-      newShuffled.splice(index, 1);
-      setShuffledPlayers(newShuffled);
-      if (newShuffled.length < 2) {
-        setIsShuffled(false);
-      }
-    }
+            if (isShuffled) {
+              const newShuffled = [...shuffledPlayers];
+              newShuffled.splice(index, 1);
+              setShuffledPlayers(newShuffled);
+              if (newShuffled.length < 2) {
+                setIsShuffled(false);
+              }
+            }
+          },
+          style: "destructive"
+        }
+      ]
+    );
   };
 
   const shuffleArray = (array) => {
@@ -128,9 +145,25 @@ const RandomSelectionScreen = () => {
   };
 
   const reset = () => {
-    setPlayers([]);
-    setShuffledPlayers([]);
-    setIsShuffled(false);
+    Alert.alert(
+      "Reset Players",
+      "Are you sure you want to reset all players?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Reset",
+          onPress: () => {
+            setPlayers([]);
+            setShuffledPlayers([]);
+            setIsShuffled(false);
+          },
+          style: "destructive"
+        }
+      ]
+    );
   };
 
   const getOrderLabel = (index) => {

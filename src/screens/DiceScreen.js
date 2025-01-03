@@ -75,7 +75,7 @@ const DiceScreen = () => {
       {isDualDice ? (
         <Text style={styles.totalText}>Total: {dice1Value + dice2Value}</Text>
       ) : (
-        <View style={styles.invisibleContainer} />
+        <Text style={styles.totalText}>Total: {dice1Value}</Text>
       )}
     </View>
   );
@@ -130,10 +130,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "#333",
-  },
-  invisibleContainer: {
-    marginTop: 20,
-    height: 36,
   },
 });
 

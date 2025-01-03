@@ -8,6 +8,7 @@ import {
   Dimensions,
   Platform,
   Easing,
+  Alert,
 } from "react-native";
 import Svg, { Circle, Path, Text as SvgText, Rect, G } from "react-native-svg";
 
@@ -160,9 +161,25 @@ const CoinScreen = () => {
   };
 
   const resetScores = () => {
-    setHeadsCount(0);
-    setTailsCount(0);
-    setResult("");
+    Alert.alert(
+      "Reset Scores",
+      "Are you sure you want to reset all scores?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Reset",
+          onPress: () => {
+            setHeadsCount(0);
+            setTailsCount(0);
+            setResult("");
+          },
+          style: "destructive"
+        }
+      ]
+    );
   };
 
   const spin = spinValue.interpolate({

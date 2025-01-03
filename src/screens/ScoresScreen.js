@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -13,6 +13,9 @@ import {
   Platform,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const STORAGE_KEY = '@game_scores_data';
 
 const ScoresScreen = () => {
   const [players, setPlayers] = useState([]);
@@ -22,6 +25,43 @@ const ScoresScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [tempScores, setTempScores] = useState({});
   const [editingRound, setEditingRound] = useState(null);
+
+  // Load saved data when component mounts
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  // Save data whenever players or rounds change
+  useEffect(() => {
+    saveData();
+  }, [players, rounds, currentRound]);
+
+  const loadData = async () => {
+    try {
+      const savedData = await AsyncStorage.getItem(STORAGE_KEY);
+      if (savedData) {
+        const { savedPlayers, savedRounds, savedCurrentRound } = JSON.parse(savedData);
+        setPlayers(savedPlayers);
+        setRounds(savedRounds);
+        setCurrentRound(savedCurrentRound);
+      }
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
+  };
+
+  const saveData = async () => {
+    try {
+      const dataToSave = {
+        savedPlayers: players,
+        savedRounds: rounds,
+        savedCurrentRound: currentRound,
+      };
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+    } catch (error) {
+      console.error('Error saving data:', error);
+    }
+  };
 
   const addPlayer = () => {
     if (newPlayer.trim() === "") {
@@ -120,13 +160,18 @@ const ScoresScreen = () => {
         },
         {
           text: "Reset",
-          onPress: () => {
-            setPlayers([]);
-            setRounds([]);
-            setCurrentRound(1);
-            setNewPlayer("");
-            setTempScores({});
-            setEditingRound(null);
+          onPress: async () => {
+            try {
+              await AsyncStorage.removeItem(STORAGE_KEY);
+              setPlayers([]);
+              setRounds([]);
+              setCurrentRound(1);
+              setNewPlayer("");
+              setTempScores({});
+              setEditingRound(null);
+            } catch (error) {
+              console.error('Error clearing data:', error);
+            }
           },
           style: "destructive",
         },

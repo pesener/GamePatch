@@ -96,11 +96,13 @@ const WheelScreen = () => {
     if (items.length === 0) {
       return (
         <View style={styles.emptyWheel}>
-          <MaterialCommunityIcons
-            name="plus-circle-outline"
-            size={50}
-            color="#db3171"
-          />
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
+            <MaterialCommunityIcons
+              name="plus-circle-outline"
+              size={50}
+              color="#db3171"
+            />
+          </TouchableOpacity>
           <Text style={styles.emptyText}>Add items to spin the wheel</Text>
         </View>
       );

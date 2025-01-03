@@ -72,9 +72,14 @@ const styles = StyleSheet.create({
   screenTitle: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#2c3e50",
+    color: "#db3171",
     marginBottom: 30,
     textAlign: "center",
+    letterSpacing: 2,
+    textTransform: "uppercase",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 1,
   },
   menuItem: {
     flexDirection: "row",

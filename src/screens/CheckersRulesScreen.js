@@ -4,99 +4,101 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 const CheckersRulesScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Checkers (Draughts) Rules</Text>
+      <View style={styles.contentContainer}>
+        <Text style={styles.title}>Checkers (Draughts) Rules</Text>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Objective</Text>
-        <Text style={styles.text}>
-          The goal is to capture all of your opponent's pieces or block them so
-          they cannot move.
-        </Text>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Objective</Text>
+          <Text style={styles.text}>
+            The goal is to capture all of your opponent's pieces or block them
+            so they cannot move.
+          </Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Setup</Text>
-        <Text style={styles.boldText}>Board:</Text>
-        <Text style={styles.text}>
-          Use an 8x8 board with alternating light and dark squares. Only the
-          dark squares are used for gameplay.
-        </Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Setup</Text>
+          <Text style={styles.boldText}>Board:</Text>
+          <Text style={styles.text}>
+            Use an 8x8 board with alternating light and dark squares. Only the
+            dark squares are used for gameplay.
+          </Text>
 
-        <Text style={styles.boldText}>Pieces:</Text>
-        <Text style={styles.text}>
-          Each player starts with 12 pieces (checkers), placed on the dark
-          squares of the three rows closest to them.
-        </Text>
+          <Text style={styles.boldText}>Pieces:</Text>
+          <Text style={styles.text}>
+            Each player starts with 12 pieces (checkers), placed on the dark
+            squares of the three rows closest to them.
+          </Text>
 
-        <Text style={styles.boldText}>Starting Positions:</Text>
-        <Text style={styles.text}>
-          Pieces are arranged on the dark squares only, leaving the central two
-          rows empty.
-        </Text>
+          <Text style={styles.boldText}>Starting Positions:</Text>
+          <Text style={styles.text}>
+            Pieces are arranged on the dark squares only, leaving the central
+            two rows empty.
+          </Text>
 
-        <Text style={styles.boldText}>Turn Order:</Text>
-        <Text style={styles.text}>
-          Players take turns, with the player using the darker pieces (often
-          black) going first.
-        </Text>
-      </View>
+          <Text style={styles.boldText}>Turn Order:</Text>
+          <Text style={styles.text}>
+            Players take turns, with the player using the darker pieces (often
+            black) going first.
+          </Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Gameplay</Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Gameplay</Text>
 
-        <Text style={styles.boldText}>1. Movement Rules</Text>
-        <Text style={styles.subheading}>Basic Movement:</Text>
-        <Text style={styles.text}>
-          Pieces move diagonally forward, one square at a time, to an unoccupied
-          square.
-        </Text>
+          <Text style={styles.boldText}>1. Movement Rules</Text>
+          <Text style={styles.subheading}>Basic Movement:</Text>
+          <Text style={styles.text}>
+            Pieces move diagonally forward, one square at a time, to an
+            unoccupied square.
+          </Text>
 
-        <Text style={styles.subheading}>Capturing an Opponent's Piece:</Text>
-        <Text style={styles.text}>
-          If an opponent's piece is diagonally adjacent, and the square
-          immediately beyond it is empty, you must jump over the opponent's
-          piece, landing on the empty square.
-          {"\n\n"}The jumped piece is captured and removed from the board.
-        </Text>
+          <Text style={styles.subheading}>Capturing an Opponent's Piece:</Text>
+          <Text style={styles.text}>
+            If an opponent's piece is diagonally adjacent, and the square
+            immediately beyond it is empty, you must jump over the opponent's
+            piece, landing on the empty square.
+            {"\n\n"}The jumped piece is captured and removed from the board.
+          </Text>
 
-        <Text style={styles.subheading}>Multiple Captures:</Text>
-        <Text style={styles.text}>
-          If, after jumping, another jump is possible, you must continue jumping
-          in the same turn (multi-jump).
-        </Text>
+          <Text style={styles.subheading}>Multiple Captures:</Text>
+          <Text style={styles.text}>
+            If, after jumping, another jump is possible, you must continue
+            jumping in the same turn (multi-jump).
+          </Text>
 
-        <Text style={styles.boldText}>2. King Rules</Text>
-        <Text style={styles.subheading}>Becoming a King:</Text>
-        <Text style={styles.text}>
-          If a piece reaches the opponent's back row, it is crowned a king.
-          {"\n"}Place another piece on top of it to signify it is now a king.
-        </Text>
+          <Text style={styles.boldText}>2. King Rules</Text>
+          <Text style={styles.subheading}>Becoming a King:</Text>
+          <Text style={styles.text}>
+            If a piece reaches the opponent's back row, it is crowned a king.
+            {"\n"}Place another piece on top of it to signify it is now a king.
+          </Text>
 
-        <Text style={styles.subheading}>King Movement:</Text>
-        <Text style={styles.text}>
-          Kings can move and capture diagonally forward and backward.
-        </Text>
+          <Text style={styles.subheading}>King Movement:</Text>
+          <Text style={styles.text}>
+            Kings can move and capture diagonally forward and backward.
+          </Text>
 
-        <Text style={styles.boldText}>3. Mandatory Capture</Text>
-        <Text style={styles.text}>
-          If a jump (capture) is available, you must take it. If multiple
-          capture options exist, you may choose which sequence to follow.
-        </Text>
-      </View>
+          <Text style={styles.boldText}>3. Mandatory Capture</Text>
+          <Text style={styles.text}>
+            If a jump (capture) is available, you must take it. If multiple
+            capture options exist, you may choose which sequence to follow.
+          </Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Winning the Game</Text>
-        <Text style={styles.boldText}>Victory Conditions:</Text>
-        <Text style={styles.text}>
-          You win if you capture all of your opponent's pieces or block them so
-          they cannot make a legal move.
-        </Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Winning the Game</Text>
+          <Text style={styles.boldText}>Victory Conditions:</Text>
+          <Text style={styles.text}>
+            You win if you capture all of your opponent's pieces or block them
+            so they cannot make a legal move.
+          </Text>
 
-        <Text style={styles.boldText}>Draw:</Text>
-        <Text style={styles.text}>
-          If neither player can move or capture in a way that changes the game
-          state significantly, the game may end in a draw.
-        </Text>
+          <Text style={styles.boldText}>Draw:</Text>
+          <Text style={styles.text}>
+            If neither player can move or capture in a way that changes the game
+            state significantly, the game may end in a draw.
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
@@ -108,12 +110,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#d0c3f1",
     padding: 20,
   },
+  contentContainer: {
+    paddingBottom: 40,
+  },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#2c3e50",
+    color: "#db3171",
+    marginBottom: 30,
     textAlign: "center",
-    marginBottom: 20,
+    letterSpacing: 2,
+    textTransform: "uppercase",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 1,
   },
   section: {
     marginBottom: 20,

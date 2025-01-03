@@ -288,6 +288,7 @@ export default function App() {
             headerStyle: {
               backgroundColor: "#db3171",
             },
+            headerTintColor: "#fff",
           }}
         />
         <Stack.Screen
