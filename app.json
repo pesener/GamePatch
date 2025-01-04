@@ -1,18 +1,21 @@
 {
   "expo": {
-    "name": "GamePatch",
+    "name": "Game Patch",
     "slug": "GamePatch",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/GAME.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#FFFFFF",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/GAME.png",
       "resizeMode": "contain",
       "backgroundColor": "#d0c3f1"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.gamepatch.app"
@@ -22,10 +25,17 @@
         "foregroundImage": "./assets/GAME.png",
         "backgroundColor": "#d0c3f1"
       },
-      "package": "com.gamepatch.app"
+      "package": "com.gamepatch.app",
+      "versionCode": 1,
+      "userInterfaceStyle": "light"
     },
     "web": {
       "favicon": "./assets/GAME.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6c438b5e-030f-458f-9d1f-014026ebd836"
+      }
     }
   }
 }
