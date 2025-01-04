@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Game Patch",
+    "displayName": "Game Patch",
     "slug": "GamePatch",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,7 +28,9 @@
       },
       "package": "com.gamepatch.app",
       "versionCode": 1,
-      "userInterfaceStyle": "light"
+      "userInterfaceStyle": "light",
+      "permissions": [],
+      "icon": "./assets/GAME.png"
     },
     "web": {
       "favicon": "./assets/GAME.png"

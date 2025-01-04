@@ -1,5 +1,6 @@
 {
-  "name": "gamepatch",
+  "name": "game-patch",
+  "displayName": "Game Patch",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
