@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'GameBuddy'
+rootProject.name = 'Game Patch'
 
 dependencyResolutionManagement {
   versionCatalogs {

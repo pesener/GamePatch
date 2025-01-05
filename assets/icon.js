@@ -1,5 +1,12 @@
-import React from 'react';
-import Svg, { Defs, LinearGradient, Stop, Circle, Text, Path } from 'react-native-svg';
+import React from "react";
+import Svg, {
+  Defs,
+  LinearGradient,
+  Stop,
+  Circle,
+  Text,
+  Path,
+} from "react-native-svg";
 
 export const AppIcon = ({ size = 1024 }) => (
   <Svg width={size} height={size} viewBox="0 0 1024 1024">
@@ -16,12 +23,7 @@ export const AppIcon = ({ size = 1024 }) => (
     </Defs>
 
     {/* Background */}
-    <Circle
-      cx="512"
-      cy="512"
-      r="512"
-      fill="url(#bgGradient)"
-    />
+    <Circle cx="512" cy="512" r="512" fill="url(#bgGradient)" />
 
     {/* Decorative elements */}
     <Circle
@@ -46,12 +48,16 @@ export const AppIcon = ({ size = 1024 }) => (
 
     {/* Stars */}
     {[45, 135, 225, 315].map((angle, i) => {
-      const x = 512 + 380 * Math.cos(angle * Math.PI / 180);
-      const y = 512 + 380 * Math.sin(angle * Math.PI / 180);
+      const x = 512 + 380 * Math.cos((angle * Math.PI) / 180);
+      const y = 512 + 380 * Math.sin((angle * Math.PI) / 180);
       return (
         <Path
           key={i}
-          d={`M${x},${y-20} L${x+10},${y-5} L${x+25},${y-10} L${x+15},${y+5} L${x+20},${y+20} L${x},${y+10} L${x-20},${y+20} L${x-15},${y+5} L${x-25},${y-10} L${x-10},${y-5} Z`}
+          d={`M${x},${y - 20} L${x + 10},${y - 5} L${x + 25},${y - 10} L${
+            x + 15
+          },${y + 5} L${x + 20},${y + 20} L${x},${y + 10} L${x - 20},${
+            y + 20
+          } L${x - 15},${y + 5} L${x - 25},${y - 10} L${x - 10},${y - 5} Z`}
           fill="#FFD93D"
           opacity="0.9"
         />
@@ -71,7 +77,7 @@ export const AppIcon = ({ size = 1024 }) => (
       GAME
     </Text>
 
-    {/* Text "Buddy" */}
+    {/* Text "Patch" */}
     <Text
       x="512"
       y="600"
@@ -81,7 +87,7 @@ export const AppIcon = ({ size = 1024 }) => (
       textAnchor="middle"
       fontFamily="Arial-BoldMT"
     >
-      BUDDY
+      PATCH
     </Text>
   </Svg>
 );

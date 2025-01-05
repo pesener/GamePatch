@@ -1,4 +1,4 @@
-package com.gamebuddy.app
+package com.gamepatch.app
 
 import android.app.Application
 import android.content.res.Configuration

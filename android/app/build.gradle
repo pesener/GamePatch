@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.gamebuddy.app'
+    namespace 'com.gamepatch.app'
     defaultConfig {
-        applicationId 'com.gamebuddy.app'
+        applicationId 'com.gamepatch.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

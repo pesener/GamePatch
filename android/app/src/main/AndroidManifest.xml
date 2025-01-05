@@ -28,9 +28,9 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.gamebuddy.app"/>
+        <data android:scheme="com.gamepatch.app"/>
         <data android:scheme="exp+gamepatch"/>
-        <data android:scheme="exp+gamebuddy"/>
+        <data android:scheme="exp+gamepatch"/>
       </intent-filter>
     </activity>
   </application>
